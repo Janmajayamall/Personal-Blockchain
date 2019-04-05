@@ -18,7 +18,7 @@ class Blockchain {
         }
         
         for(let i = 1; i < chain.length;i++){
-            if (chain[i].lastHash !== chain[i-1].hash
+            if (JSON.stringify(chain[i].lastHash) !== JSON.stringify(chain[i-1].hash)
                 || JSON.stringify(chain[i].hash) !== JSON.stringify(Block.blockHash(chain[i]))){
                     return false;
             }
